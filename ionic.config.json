@@ -1,0 +1,7 @@
+{
+  "name": "GloballoveIos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
