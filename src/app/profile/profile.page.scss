@@ -1,0 +1,29 @@
+ion-content {
+  ion-img::part(image) {
+    // height: 180px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+
+  }
+
+  .quote {
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #2fdf75;
+  }
+
+  .gallery {
+    ion-img::part(image) {
+      // height: 180px;
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+
+    }
+  }
+}

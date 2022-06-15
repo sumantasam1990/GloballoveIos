@@ -1,0 +1,25 @@
+ion-content {
+  .they {
+    background: #fceae8;
+    padding: 10px;
+    border-radius: 25px;
+    width: 40%;
+  }
+
+  .me {
+    background: #eeeeee;
+    padding: 10px;
+    border-radius: 25px;
+    width: 40%;
+  }
+
+  ion-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .main_chat {
+    height: 100%;
+    overflow: auto;
+  }
+}

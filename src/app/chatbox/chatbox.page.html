@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-back-button color="danger" slot="start"></ion-back-button>
+    <ion-title color="danger">
+      <p>{{ toName }}<br><span style="font-size: 13px;">
+          <ion-text color="success">{{ typing }}</ion-text>
+        </span></p>
+    </ion-title>
+
+    <ion-button slot="end" fill="clear" color="dark">
+      <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div #scrollMe [scrollTop]="scrollMe.scrollHeight" class="main_chat">
+    <ion-item lines="none" *ngFor="let chat of messages">
+
+      <ion-label class="ion-text-wrap they" *ngIf="fromId != chat.to">
+        <h2>{{ chat.msg }}</h2>
+
+        <!-- <p style="margin-top: 6px;" *ngIf="chat.datetime">{{ chat.datetime|date: 'medium' }}</p> -->
+      </ion-label>
+
+      <ion-label class="ion-text-wrap me" *ngIf="fromId == chat.to">
+        <h2>{{ chat.msg }}</h2>
+
+        <!-- <p style="margin-top: 6px;" *ngIf="chat.datetime">{{ chat.datetime|date: 'medium' }}</p> -->
+      </ion-label>
+
+    </ion-item>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input [(ngModel)]="msg.txt" name="txt" type="text" autofocus="false" placeholder="Write your message..."
+      slot="start"></ion-input>
+    <ion-button (click)="sendMessage()" slot="end" fill="clear" color="danger">Send</ion-button>
+  </ion-toolbar>
+</ion-footer>

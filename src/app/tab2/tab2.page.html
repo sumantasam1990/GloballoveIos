@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
+  <ion-toolbar color="light">
+    <ion-title size="large">
+      Messages
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,32 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large" color="danger">Messages <ion-badge color="danger">{{ users.length }}</ion-badge>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <ion-list style="margin-top: 12px;">
+    <ion-item lines="none" shape="round" (click)="chatbox(u.user_id, u.email, u.name)" *ngFor="let u of users">
+      <ion-avatar slot="start">
+        <img *ngIf="u.user_id > 0" [src]="u.propic">
+        <img *ngIf="u.user_id == 0" src="https://cdn-icons-png.flaticon.com/512/2706/2706950.png">
+      </ion-avatar>
+      <ion-label>
+        <h2 *ngIf="u.user_id > 0">{{ u.name }}</h2>
+        <h2 *ngIf="u.user_id == 0">
+          <ion-text color="tertiary">Customer Support</ion-text>
+        </h2>
+        <p *ngIf="typing == ''">{{ u.lmsg }}</p>
+        <p *ngIf="typing != ''">{{ typing }}</p>
+      </ion-label>
+      <!-- <ion-label slot="end">
+        <p>1 hours ago</p>
+      </ion-label> -->
+    </ion-item>
+
+
+  </ion-list>
+
 </ion-content>

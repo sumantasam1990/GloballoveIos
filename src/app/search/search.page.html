@@ -1,0 +1,59 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-back-button slot="start" color="dark"></ion-back-button>
+    <ion-title>Search</ion-title>
+    <ion-button color="primary" slot="end" fill="clear" (click)="done()">
+      Done
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-radio-group value="biff">
+      <ion-list-header>
+        <ion-label>
+          <ion-text color="primary">
+            I am looking for
+          </ion-text>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Male</ion-label>
+        <ion-radio slot="start" value="Male"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Female</ion-label>
+        <ion-radio slot="start" value="Female"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Transgender</ion-label>
+        <ion-radio slot="start" value="Transgender"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list lines="full">
+    <ion-list-header>
+      <ion-label>
+        <ion-text color="primary">
+          Age between
+        </ion-text>
+      </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-range dualKnobs="true" min="18" max="100" step="10" snaps="true" ticks="true" pin="true">
+        <ion-label slot="start">18</ion-label>
+        <ion-label slot="end">100+</ion-label>
+      </ion-range>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label class="ion-text-wrap">
+        <p>*NOTE: Please remember this filter/search is not permanently saved.</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
